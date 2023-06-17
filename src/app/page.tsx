@@ -12,7 +12,7 @@ export default function Home() {
       <section className="row-1">
         <div className="inner">
           <h1>Hello, I'm Ruel and I'm a Full Stack Developer</h1>
-          <p>Nothing much to see here, this site is just a place that will hold all my knowledge and journey as a developer.</p>
+          <p>This site is just a place where all my idea and knowledge as a developer is put together.</p>
         </div>
       </section>
       <section className="row-2">
