@@ -13,18 +13,10 @@ export default function Header() {
           <a href="/contact">Contact</a>
         </nav>
         <div id="links">
-          <a href={'/'}>
-            <i className="icon-github"></i>
-          </a>
-          <a href={'/'}>
-            <i className="icon-youtube"></i>
-          </a>
-          <a href={'/'}>
-            <i className="icon-twitter"></i>
-          </a>
-          <a href={'/'}>
-            <i className="icon-linkedin"></i>
-          </a>
+          <a href="https://github.com/rmindo" target="_blank"><i className="icon-github"></i></a>
+          <a href="https://twitter.com/ruelmindo" target="_blank"><i className="icon-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/ruelmindo/" target="_blank"><i className="icon-linkedin"></i></a>
+          <a href="https://www.youtube.com/channel/UCBVUWjYR8vvqzJ2tKH7yqTQ" target="_blank"><i className="icon-youtube"></i></a>
         </div>
       </div>
     </header>

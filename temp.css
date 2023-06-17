@@ -68,13 +68,13 @@ footer {
 h1 {
   margin: 0 0 40px;
   font-size: 80px;
-  line-height: 0.6;
+  line-height: 0.9;
   letter-spacing: 14px;
   font-variant-caps: all-petite-caps;
 }
 
 .row-1 {
-  padding: 130px 0;
+  padding: 120px 0;
   background-color: #f9f9f9;
 }
 .row-1 p {

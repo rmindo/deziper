@@ -11,7 +11,7 @@ export default function Home() {
     <div id="home">
       <section className="row-1">
         <div className="inner">
-          <h1>It's me as a Developer</h1>
+          <h1>Hello, I'm Ruel and I'm a Full Stack Developer</h1>
           <p>Nothing much to see here, this site is just a place that will hold all my knowledge and journey as a developer.</p>
         </div>
       </section>
