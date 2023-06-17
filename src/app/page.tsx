@@ -20,19 +20,31 @@ export default function Home() {
           <div className="grid">
             <a href="">
               <strong>Programming</strong>
-              <span>All about Development, Code, Tricks, Issues, Data Structure and Algorithms.</span>
+              <span className="text">All about Development, Code, Tricks, Issues, Data Structure and Algorithms.</span>
+              <span className="button-arrow">
+                <i className="icon-arrow-right"></i>
+              </span>
             </a>
             <a href="">
               <strong>Security</strong>
-              <span>Securing the application, Penetration Testing, Preparing and Mitigation.</span>
+              <span className="text">Securing the application, Penetration Testing, Preparing and Mitigation.</span>
+              <span className="button-arrow">
+                <i className="icon-arrow-right"></i>
+              </span>
             </a>
             <a href="">
               <strong>Blockchain</strong>
-              <span>DApp Development, Cypto Invistment, Business, Trading and Analysis.</span>
+              <span className="text">DApp Development, Cypto Invistment, Business, Trading and Analysis.</span>
+              <span className="button-arrow">
+                <i className="icon-arrow-right"></i>
+              </span>
             </a>
             <a href="">
               <strong>Cloud and Network</strong>
-              <span>Deplyoment, Infrastructure, System Structure, Network Programming.</span>
+              <span className="text">Deplyoment, Infrastructure, System Structure, Network Programming.</span>
+              <span className="button-arrow">
+                <i className="icon-arrow-right"></i>
+              </span>
             </a>
           </div>
         </div>

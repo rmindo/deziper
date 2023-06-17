@@ -34,6 +34,23 @@
       a:last-child {
         margin-right: 0;
       }
+
+      .text {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .button-arrow {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 100px;
+        border: 1px solid #999;
+
+        i {
+          color: #999;
+        }
+      }
     }
   }
 }
