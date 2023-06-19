@@ -12,7 +12,7 @@ export default function Home() {
       <section className="row-1">
         <div className="inner">
           <h1>Hello, I'm Ruel and I'm a Full Stack Developer</h1>
-          <p>This site is just a place where all my idea and knowledge as a developer is put together.</p>
+          <p>This site is just a place where all of my ideas and knowledge as a developer are put together.</p>
         </div>
       </section>
       <section className="row-2">
@@ -27,7 +27,7 @@ export default function Home() {
             </a>
             <a href="">
               <strong>Security</strong>
-              <span className="text">Securing the application, Penetration Testing, Preparing and Mitigation.</span>
+              <span className="text">Securing Application, Scanning, Penetration, Preparing and Mitigation.</span>
               <span className="button-arrow">
                 <i className="icon-arrow-right"></i>
               </span>
