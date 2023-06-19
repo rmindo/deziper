@@ -33,7 +33,7 @@ export default function Home() {
               </span>
             </a>
             <a href="/network">
-              <strong>Cloud and Network</strong>
+              <strong>Network</strong>
               <span className="text">Deplyoment, Infrastructure, System Structure, Network Programming.</span>
               <span className="button-arrow">
                 <i className="icon-arrow-right"></i>
