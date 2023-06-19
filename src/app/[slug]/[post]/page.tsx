@@ -1,4 +1,5 @@
-export default function Post() {
+export default function Post({params}: any) {
+
   return (
     <div id="panel">
       <section className="row-1">

@@ -4,7 +4,7 @@ export default function NotFound() {
       <section className="row-1">
         <div className="inner">
           <h1>404</h1>
-          <p>Category not found</p>
+          <p>Post not found</p>
         </div>
       </section>
     </div>

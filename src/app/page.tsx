@@ -25,16 +25,16 @@ export default function Home() {
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
-            <a href="/security">
-              <strong>Security</strong>
-              <span className="text">Securing Application, Scanning, Penetration, Preparing and Mitigation.</span>
+            <a href="/network">
+              <strong>Network</strong>
+              <span className="text">Deplyoment, Infrastructure, System Structure, Network Programming.</span>
               <span className="button-arrow">
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
-            <a href="/network">
-              <strong>Network</strong>
-              <span className="text">Deplyoment, Infrastructure, System Structure, Network Programming.</span>
+            <a href="/security">
+              <strong>Security</strong>
+              <span className="text">Securing Application, Scanning, Penetration, Preparing and Mitigation.</span>
               <span className="button-arrow">
                 <i className="icon-arrow-right"></i>
               </span>

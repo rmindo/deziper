@@ -1,8 +1,15 @@
 import {notFound} from "next/navigation"
 
+const categories = [
+  'code',
+  'others',
+  'network',
+  'security',
+]
 
 export default function Category({params}: any) {
-  if(!['code','security','blockchain','network'].includes(params.slug)) {
+
+  if(!categories.includes(params.slug)) {
     notFound()
   }
   return (
