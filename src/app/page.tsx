@@ -27,7 +27,7 @@ export default function Home() {
             </a>
             <a href="/network">
               <strong>Network</strong>
-              <span className="text">Deplyoment, Infrastructure, System Structure, Network Programming.</span>
+              <span className="text">Network Programming, Deplyoment, Scalable System and Software Architecture.</span>
               <span className="button-arrow">
                 <i className="icon-arrow-right"></i>
               </span>
