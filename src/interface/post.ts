@@ -6,6 +6,7 @@ export interface PostInterface {
   status: string,
   content: string,
   description: string,
+  tags: string[],
   date: {
     updated: string,
     created: string,
