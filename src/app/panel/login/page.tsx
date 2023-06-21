@@ -1,19 +1,18 @@
 'use client'
 
 import '@src/assets/sass/panel.scss'
+import Brand from '@src/components/brand'
 
 
 export default function Login() {
   return (
     <div id="login" className="box">
       <form id="form" onSubmit={() => {}}>
-        <div id="brand">
-          <a href="/">deziper</a>
-        </div>
+          <Brand/>
           <div className="field">
             <label>
-              <i className="icon-email"></i>
-              <span>Email</span>
+              <i className="icon-user"></i>
+              <span>User Name</span>
             </label>
             <input type="email" onChange={() => {}} required/>
           </div>
