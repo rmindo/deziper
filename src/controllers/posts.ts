@@ -43,8 +43,8 @@ export function getPost({page, post: slug}: URLParamsType): PostInterface {
     ...post,
     date: {
       created: post.date.created,
-      updated: date.updated.getDateAndDay(),
-      published: date.published.getDateAndDay()
+      updated: date.updated.getDate(),
+      published: date.published.getDate()
     },
     categories: iterateCategories(post.categories)
   }
