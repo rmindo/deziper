@@ -37,6 +37,17 @@ article {
   .date {
     margin-right: 5px;
   }
+  .tags {
+    margin-top: 50px;
+    a {
+      color: #999;
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 10px;
+      border-radius: 100px;
+      text-decoration: underline;
+    }
+  }
   .content {
     color: #555;
     font-size: 20px;

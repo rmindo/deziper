@@ -59,6 +59,9 @@ export default function Post({params}: {params: URLParamsType}) {
           <div className="content">
             {post.content}
           </div>
+          <div className="tags">
+            {post.tags.map((item: string) => (<a href="">{item}</a>))}
+          </div>
         </article>
       </section>
     </div>

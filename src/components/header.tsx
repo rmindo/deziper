@@ -1,10 +1,11 @@
+import Brand from '@src/components/brand'
+
+
 export default function Header() {
   return (
     <header id="header">
       <div className="inner">
-        <div id="brand">
-          <a href="/">deziper</a>
-        </div>
+        <Brand/>
         <nav id="menu">
           <a href="/">Home</a>
           <a href="/services">Services</a>

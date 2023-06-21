@@ -55,13 +55,14 @@ form {
   }
 }
 .button-1 {
-  color: #888;
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
-  background: none;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 100px;
+  // background: #4945ff;
+  background: #8c4bff;
   border: 1px solid #999;
 }
 .action {
@@ -70,8 +71,8 @@ form {
 #brand {
   text-align: center;
   margin-bottom: 40px;
-  a {
-    font-size: 40px;
-    font-weight: bold;
+  img {
+    width: 60%;
+    height: auto;
   }
 }

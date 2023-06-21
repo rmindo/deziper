@@ -27,7 +27,7 @@ export default async function Category({params}: {params: URLParamsType}) {
                 <article className="meta" key={index}>
                   <h3>{post.title}</h3>
 
-                  <p className="date">Published on {date.published.getDateAndDay()}</p>
+                  <p className="date">Published on {date.published.getDate()}</p>
                   <p className="desc">{post.description}</p>
                   
                   <a className="more" href={`/${params.page}/${post.slug}`}>
