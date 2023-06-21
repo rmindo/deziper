@@ -21,28 +21,28 @@ export default function Home() {
             <a href="/code">
               <strong>Code</strong>
               <span className="text">All about Development, Code, Tricks, Issues, Data Structure and Algorithms.</span>
-              <span className="button-arrow">
+              <span className="arrow">
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
             <a href="/network">
               <strong>Network</strong>
               <span className="text">Network Programming, Deplyoment, Scalable System and Software Architecture.</span>
-              <span className="button-arrow">
+              <span className="arrow">
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
             <a href="/security">
               <strong>Security</strong>
               <span className="text">Securing Application, Scanning, Penetration, Preparing and Mitigation.</span>
-              <span className="button-arrow">
+              <span className="arrow">
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
-            <a href="/others">
+            <a href="/technology">
               <strong>Tech and Others</strong>
               <span className="text">Technology, Arts and Design, Idea, Business, Investment, and Others.</span>
-              <span className="button-arrow">
+              <span className="arrow">
                 <i className="icon-arrow-right"></i>
               </span>
             </a>
