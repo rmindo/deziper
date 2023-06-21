@@ -1,0 +1,108 @@
+article {
+  h3 {
+    margin: 0;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+  }
+}
+
+.meta {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  p {
+    color: #999;
+    font-size: 16px;
+  }
+  span {
+    margin-right: 15px;
+  }
+  .category {
+    a {
+      color: #999;
+      margin-left: 5px;
+      text-decoration: underline;
+    }
+  }
+}
+
+#post {
+  width: 800px;
+  
+  h1 {
+    margin: 0;
+    color: #444;
+  }
+  .date {
+    margin-right: 5px;
+  }
+  .content {
+    color: #555;
+    font-size: 20px;
+    line-height: 35px;
+  }
+  .reaction {
+    padding: 15px 0;
+    position: fixed;
+    margin-left: -80px;
+    button {
+      border: 0;
+      padding: 0;
+      background: 0;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      margin-bottom: 30px;
+
+      i {
+        color: #888;
+        font-size: 26px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+#posts {
+  h1 {
+    margin: 0 0 50px;
+  }
+
+  #items {
+    display: flex;
+    flex-wrap: wrap;
+
+    article {
+      width: 40%;
+      margin: 0;
+      flex-grow: 1;
+      padding: 0 50px 60px 0;
+
+      .desc {
+        color: #777;
+        font-size: 18px;
+        margin: 0 0 20px;
+      }
+      .more {
+        margin: 0;
+        color: #777;
+        font-size: 15px;
+        border: 1px solid;
+        padding: 5px 10px;
+        align-items: center;
+        display: inline-flex;
+        border-radius: 100px;
+        span {
+          margin-right: 5px;
+        }
+      }
+
+    }
+    article:nth-child(even) {
+      margin-right: 0;
+    }
+    article:last-child {
+      width: 40%;
+    }
+  }
+}

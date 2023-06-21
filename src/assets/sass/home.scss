@@ -10,6 +10,8 @@
 
   .row-1 {
     padding: 120px 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e2e2e2;
   }
 
   .row-2 {
@@ -33,10 +35,11 @@
 
       .text {
         display: block;
+        line-height: 25px;
         margin-bottom: 30px;
       }
 
-      .button-arrow {
+      .arrow {
         width: 20px;
         height: 20px;
         display: inline-block;
