@@ -2,6 +2,11 @@
   {
     "id": 1,
     "author": "John Doe",
+    "tags": [
+      "Python",
+      "Basic",
+      "Code"
+    ],
     "categories": {
       "code": "Code"
     },
@@ -20,6 +25,10 @@
   {
     "id": 2,
     "author": "Jane Smith",
+    "tags": [
+      "TCP/IP",
+      "Network"
+    ],
     "categories": {
       "network": "Network"
     },
@@ -38,6 +47,12 @@
   {
     "id": 3,
     "author": "Mark Johnson",
+    "tags": [
+      "Security",
+      "Network",
+      "Code",
+      "Web"
+    ],
     "categories": {
       "code": "Code",
       "network": "Network",
@@ -58,6 +73,11 @@
   {
     "id": 4,
     "author": "Sarah Thompson",
+    "tags": [
+      "AI",
+      "Machine",
+      "Learning"
+    ],
     "categories": {
       "technology": "Technology"
     },
@@ -76,6 +96,11 @@
   {
     "id": 5,
     "author": "David Brown",
+    "tags": [
+      "Tips",
+      "Tricks",
+      "Javascript"
+    ],
     "categories": {
       "code": "Code"
     },
@@ -94,6 +119,10 @@
   {
     "id": 6,
     "author": "Emily Wilson",
+    "tags": [
+      "Basic",
+      "Network"
+    ],
     "categories": {
       "network": "Network"
     },
@@ -112,6 +141,10 @@
   {
     "id": 7,
     "author": "Michael Davis",
+    "tags": [
+      "Security",
+      "Code"
+    ],
     "categories": {
       "security": "Security"
     },
@@ -130,6 +163,10 @@
   {
     "id": 8,
     "author": "Jessica Wilson",
+    "tags": [
+      "Basic",
+      "AI"
+    ],
     "categories": {
       "technology": "Technology"
     },
@@ -148,6 +185,12 @@
   {
     "id": 9,
     "author": "Robert Johnson",
+    "tags": [
+      "Java",
+      "Object",
+      "Oriented",
+      "Code"
+    ],
     "categories": {
       "code": "Code"
     },
@@ -166,6 +209,11 @@
   {
     "id": 10,
     "author": "Amy Thompson",
+    "tags": [
+      "Basic",
+      "Network",
+      "Wireless"
+    ],
     "categories": {
       "network": "Network"
     },
@@ -184,6 +232,12 @@
   {
     "id": 11,
     "author": "Daniel Smith",
+    "tags": [
+      "Web",
+      "Code",
+      "Vulnerabilities",
+      "Security"
+    ],
     "categories": {
       "security": "Security"
     },
@@ -202,6 +256,12 @@
   {
     "id": 12,
     "author": "Laura Davis",
+    "tags": [
+      "Big",
+      "Data",
+      "Basic",
+      "Analytics"
+    ],
     "categories": {
       "technology": "Technology"
     },
@@ -220,6 +280,12 @@
   {
     "id": 13,
     "author": "William Johnson",
+    "tags": [
+      "C++",
+      "Basic",
+      "Code",
+      "Programming"
+    ],
     "categories": {
       "code": "Code"
     },
@@ -238,6 +304,11 @@
   {
     "id": 14,
     "author": "Olivia Brown",
+    "tags": [
+      "Route",
+      "Protocol",
+      "Network"
+    ],
     "categories": {
       "network": "Network"
     },
@@ -256,6 +327,12 @@
   {
     "id": 15,
     "author": "Ethan Wilson",
+    "tags": [
+      "Secure",
+      "Software",
+      "Code",
+      "Security"
+    ],
     "categories": {
       "security": "Security"
     },
@@ -274,6 +351,12 @@
   {
     "id": 16,
     "author": "Sophia Johnson",
+    "tags": [
+      "Computing",
+      "Basic",
+      "Cloud",
+      "Network"
+    ],
     "categories": {
       "technology": "Technology"
     },
@@ -292,6 +375,11 @@
   {
     "id": 17,
     "author": "Liam Davis",
+    "tags": [
+      "Ruby",
+      "Basic",
+      "Code"
+    ],
     "categories": {
       "code": "Code"
     },
@@ -310,6 +398,11 @@
   {
     "id": 18,
     "author": "Chloe Thompson",
+    "tags": [
+      "Network",
+      "Security",
+      "Firewall"
+    ],
     "categories": {
       "network": "Network"
     },
@@ -328,6 +421,11 @@
   {
     "id": 19,
     "author": "Mia Wilson",
+    "tags": [
+      "Penetration",
+      "Testing",
+      "Fundamentals"
+    ],
     "categories": {
       "security": "Security"
     },
@@ -346,6 +444,11 @@
   {
     "id": 20,
     "author": "Noah Johnson",
+    "tags": [
+      "Things",
+      "Internet",
+      "IoT"
+    ],
     "categories": {
       "technology": "Technology"
     },
