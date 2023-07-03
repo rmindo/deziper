@@ -1,11 +1,25 @@
-import {PostInterface as Post} from '@src/interface/post'
-import {
-  DateInterface as DateInt,
-  DateTimeInterface as DateTimeInt,
-  PostDateInterface as PostDateInt,
-}
-from '@src/interface/date'
+import {PrismaPages as Pages, PageInterface as PageInt} from '@src/interface/pages'
+import {PrismaPosts as Posts, PostInterface as PostInt} from '@src/interface/posts'
 
+import {
+  HTTPOption as Option,
+  HTTPResponse as Response,
+}
+from '@src/interface/http'
+
+
+export type Menu = {
+  name?: string | undefined,
+  icon?: string,
+  root?: string,
+  label?: string,
+  auth?: string[]
+  group?: Menu[]
+}
+
+export type DynamicObject = {
+  [key: string]: any
+}
 
 export type CategoryType = {
   slug: string,
@@ -17,15 +31,28 @@ export type URLParamsType = {
   post: string,
 }
 
-export interface HelpersInterface {
-  date: (date: {updated: string, published: string}) => DateInt
+export type PageProps = {
+  page: PageInterface,
+  params: DynamicObject,
+  searchParams: URLParamsType
 }
 
-export type PostInterface = Post
-export type DateInterface = DateInt
-export type PostDateInterface = PostDateInt
-export type DateTimeInterface = DateTimeInt
-export interface PostInstance {
-  post: Post,
-  help: DateInt
+
+export type HTTPOption = Option
+export type HTTPResponse = Response
+
+
+export type PrismaPosts = Posts
+export type PrismaPages = Pages
+export type PageInterface = PageInt
+export type PostInterface = PostInt
+
+export interface DateTimeInterface {
+  date: Date,
+  today: Date,
+  getDay(): string
+  getTime(): string
+  getDate(): string
+  getFullDate(): string,
+  getFullDateTime(div?: string): string,
 }
