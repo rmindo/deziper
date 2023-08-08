@@ -1,3 +1,5 @@
+@import '../fonts/icomoon/fonts.css';
+
 /* latin */
 @font-face {
   font-family: 'Quicksand';
@@ -50,5 +52,3 @@
   font-style: normal;
   font-display: block;
 }
-
-@import '../fonts/icomoon/fonts.css';
