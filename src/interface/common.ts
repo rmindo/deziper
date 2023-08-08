@@ -53,6 +53,7 @@ export interface DateTimeInterface {
   getDay(): string
   getTime(): string
   getDate(): string
+  getDateTime(): string
   getFullDate(): string,
   getFullDateTime(div?: string): string,
 }

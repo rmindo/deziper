@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./sqlite.db"
+}
+
+model Users {
+  id        Int    @id @unique @default(autoincrement())
+  email     String @unique
+  avatar    String?
+  created   DateTime @default(now())
+  bio       String?
+  role      String
+  lastname  String
+  firstname String
+  password  String
+  posts     Posts[]
+  pages     Pages[]
+
+  @@index(id)
+  @@index(email)
+}
+
+model Posts {
+  id          Int    @id @unique @default(autoincrement())
+  tags        String @default("[]")
+  slug        String @unique
+  title       String
+  media       String?
+  status      String
+  content     String?
+  parent      String
+  author      Int
+  user        Users   @relation(fields: [author], references: [id])
+  page        Pages   @relation(fields: [parent], references: [title])
+  updated     DateTime @updatedAt
+  created     DateTime @default(now())
+  published   DateTime @default(now())
+  categories  String
+  description String
+
+  @@index(id)
+  @@index(slug)
+  @@index(parent)
+  @@index(status)
+  @@index(author)
+  @@index(content)
+}
+
+
+model Pages {
+  id          Int    @id @unique @default(autoincrement())
+  slug        String @unique
+  type        String @default("Page")
+  title       String @unique
+  status      String
+  content     String?
+  author      Int
+  user        Users   @relation(fields: [author], references: [id])
+  updated     DateTime @updatedAt
+  created     DateTime @default(now())
+  published   DateTime @default(now())
+  template    String?
+  description String?
+  topMenu     Boolean?
+  bottomMenu  Boolean?
+  posts       Posts[]
+
+  @@index(id)
+  @@index(slug)
+  @@index(status)
+  @@index(author)
+  @@index(content)
+}

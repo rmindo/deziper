@@ -1,8 +1,8 @@
 article {
   h3 {
-    margin: 0;
     display: flex;
     font-size: 20px;
+    margin: 0 0 10px;
     align-items: center;
   }
 }
@@ -10,10 +10,10 @@ article {
 .meta {
   margin: 0;
   font-size: 14px;
-  font-weight: 500;
   p {
     color: #999;
     font-size: 16px;
+    margin: 0 0 10px;
   }
   span {
     margin-right: 15px;
@@ -28,11 +28,14 @@ article {
 }
 
 #post {
-  width: 800px;
-  
   h1 {
-    margin: 0;
     color: #444;
+    margin: 0 0 15px;
+  }
+  .meta {
+    p {
+      margin: 0 0 15px;
+    }
   }
   .date {
     margin-right: 5px;
@@ -52,6 +55,7 @@ article {
     color: #555;
     font-size: 20px;
     line-height: 35px;
+    margin-bottom: 50px;
   }
   .reaction {
     padding: 15px 0;
@@ -74,11 +78,16 @@ article {
     }
   }
 }
-#posts {
-  h1 {
-    margin: 0 0 50px;
-  }
 
+#category {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 60px 0;
+  font-size: 20px;
+  
+  h1 {
+    margin: 0 0 40px;
+  }
   #items {
     display: flex;
     flex-wrap: wrap;
@@ -87,6 +96,7 @@ article {
       width: 40%;
       margin: 0;
       flex-grow: 1;
+      line-height: normal;
       padding: 0 50px 60px 0;
 
       .desc {
@@ -103,6 +113,7 @@ article {
         align-items: center;
         display: inline-flex;
         border-radius: 100px;
+        text-decoration: none !important;
         span {
           margin-right: 5px;
         }

@@ -16,17 +16,21 @@ from '@src/interface/common'
  */
 export const hooks = {
   useState(initialState: any = {}) {
-    const [state, set] = React.useState(initialState)
-  
+    var [state, set] = React.useState(initialState)
+    var mergedState = state
+
     return {
-      ...state,
-      set(data: object | Function) {
-        if(typeof data == 'function') {
-          data = data(state)
+      ...mergedState,
+      set(newState: object | Function) {
+        if(typeof newState == 'function') {
+          newState = newState(state)
         }
-        const merged = {...state, ...data}
-        set(merged)
-        return merged
+        mergedState = {
+          ...mergedState,
+          ...newState
+        }
+        set(mergedState)
+        return mergedState
       },
       get(name: any = null) {
         if(name) {
@@ -120,17 +124,24 @@ export function toPath(str: string) {
 }
 
 /**
- * Make pathname from menu item
- * @param item Menu item
+ * Page and post path
+ * @param path The path as array
  * @returns {string}
  */
-export function makePath(item: Menu) {
-  if(item.root) {
-    return item.root
+export function createPath(path: string[]) {
+  return toPath([''].concat(path.filter(v => v)).join('/'))
+}
+
+/**
+ * Get status from code
+ * @param code Status code
+ * @returns {string}
+ */
+export function getStatus(code: number) {
+  if(code.toString().match(/^2/g)) {
+    return 'success'
   }
-  if(item.name) {
-    return toPath(['panel'].concat([item.name]).join('/'))
-  }
+  return 'error'
 }
 
 /**
@@ -187,6 +198,20 @@ export function setQuery(data: {[key: string]: any}, exclude = []) {
   return p.join('&')
 }
 
+
+/**
+ * Limit the words
+ * @param words 
+ * @param limit 
+ * @returns {string}
+ */
+export function sliceWords(words: string, limit = 20) {
+  if(words) {
+    return words.split(/\s/g).slice(0, limit).join(' ')
+  }
+  return words
+}
+
 /**
  * Format date
  * @param ts 
@@ -194,46 +219,57 @@ export function setQuery(data: {[key: string]: any}, exclude = []) {
 export function datetime(ts: number): DateTimeInterface {
   var today: Date = new Date()
   var date: Date = new Date(ts)
-  
-  /**
-   * Get day of the week
-   * @example Sat
-   */
-  function getDay() {
-    return date.toDateString().substring(0,3)
-  }
-
-  /**
-   * Get date
-   * @example Jul 2 2023
-   */
-  function getDate() {
-    return date.toDateString().substring(4)
-  }
-
-  /**
-   * Get time without senconds
-   * @example 04:20 AM
-   */
-  function getTime() {
-    return date.toLocaleTimeString().replace(/:(\d+)\s/g, ' ')
-  }
-  
-  /**
-   * Get formatted full date
-   * @example Sat, Jul 2 2023
-   */
-  function getFullDate() {
-    return date.toDateString().replace(/^(\w+)\s(\w+)(\s0){1}/g, '$1, $2 ')
-  }
+ 
 
   return {
     date,
-    today,
-    getDay,
-    getTime,
-    getDate,
-    getFullDate,
-    getFullDateTime: (div: string = 'at') => `${getFullDate()} ${div} ${getTime()}`,
+    today, 
+    /**
+     * Get day of the week
+     * @example Sat
+     */
+    getDay() {
+      return date.toDateString().substring(0,3)
+    },
+
+    /**
+     * Get date
+     * @example Jul 2 2023
+     */
+    getDate() {
+      return date.toDateString().substring(4)
+    },
+
+    /**
+     * Get time without senconds
+     * @example 04:20 AM
+     */
+    getTime() {
+      return date.toLocaleTimeString().replace(/:(\d+)\s/g, ' ')
+    },
+    
+    /**
+     * Get formatted full date and time
+     * @example Sat, Jul 2 2023 at 5:41 PM
+     */
+    getDateTime() {
+      return this.getFullDateTime().slice(5)
+    },
+    
+    /**
+     * Get formatted full date
+     * @example Sat, Jul 2 2023
+     */
+    getFullDate() {
+      return date.toDateString().replace(/^(\w+)\s(\w+)(\s0){1}/g, '$1, $2 ')
+    },
+    
+    /**
+     * Get formatted full date and time
+     * @example Sat, Jul 2 2023 at 5:41 PM
+     */
+    getFullDateTime(div = 'at') {
+      return `${this.getFullDate()} ${div} ${this.getTime()}`
+    },
   }
 }

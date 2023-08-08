@@ -1,9 +1,4 @@
-'use client'
-
-import {
-  usePathname
-}
-from 'next/navigation'
+import {headers} from 'next/headers'
 
 /**
  * Global styles
@@ -19,21 +14,20 @@ import Footer from '@src/components/footer'
 
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-  const pathname = usePathname().split('/')[1]
-
+  var pathname = headers().get('x-page') ?? ''
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&amp;display=swap"/>
+        <meta charSet="utf-8"/>
       </head>
       {pathname == 'panel' ? (
-        <body>
+        <body id="panel">
           <Panel>{children}</Panel>
         </body>
       ):(
-        <body>
+        <body id="page">
           <Header/>
-          <main id="content">{children}</main>
+          <main id="content" className={pathname}>{children}</main>
           <Footer/>
         </body>
       )}

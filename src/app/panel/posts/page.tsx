@@ -1,11 +1,21 @@
+
+import ContentTable from '@src/components/panel/table'
+
+export const metadata = {
+  title: 'Posts'
+}
+
 export default function Posts() {
   return (
-    <div id="panel">
-      <section className="row-1">
-        <div className="inner">
-          <h1>Posts</h1>
-        </div>
-      </section>
-    </div>
+    <ContentTable
+      columns={[
+        'ID',
+        'Title',
+        'Category',
+        'Status',
+        'Updated',
+      ]}
+      resource={'Posts'}
+    />
   )
 }

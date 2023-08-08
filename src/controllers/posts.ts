@@ -1,70 +1,96 @@
-import {getDate} from '@src/lib/common'
-import {isPage, notFound} from '@src/controllers/pages'
+import {notFound} from 'next/navigation'
+
+import {toPath} from '@src/helpers/common'
 import {
-  URLParamsType,
-  DateInterface,
-  PostInterface,
+  select,
+  computed,
+  prisma as prismaInstance
 }
-from '@src/interface/common'
+from '@src/controllers/compute'
 
 
-import posts from '@src/controllers/posts.json'
+import {
+  Categories,
+  PrismaPosts
+}
+from '@src/interface/posts'
 
+
+/**
+ * Reuse
+ */
+export const prisma = prismaInstance
 
 /**
  * Iterate categories with new property name
  * @param categories 
  * @returns {array}
  */
-function iterateCategories(categories: {[key: string]: string}) {
+export function iterateCategories(categories: {[key: string]: string}): Categories[] {
   var items = []
-  for(var slug in categories) {
-    items.push({slug, name: categories[slug]})
+  for(var i in categories) {
+    items.push({name: categories[i], slug: toPath(categories[i])})
   }
   return items
 }
 
+
 /**
  * Get Post 
  * @param params URL path parameters
- * @returns {PostInterface}
  */
-export function getPost({page, post: slug}: URLParamsType): PostInterface {
-  const items = posts.filter((post: any) => slug == post.slug)
+export async function getPost(where: any = {}) {
 
-  if(!isPage(page) || items.length == 0) {
-    notFound()
+  const post = await computed.posts.findFirst({
+    where,
+    include: {
+      user: {
+        select: select.user
+      },
+    }
+  })
+  if(post) {
+    return {
+      ...post,
+      author: post.author,
+      tags: JSON.parse(post.tags),
+      categories: JSON.parse(post.categories)
+    }
   }
-
-  const post: PostInterface = items[0]
-  const date: DateInterface = getDate(post.date)
-
-  return {
-    ...post,
-    date: {
-      created: post.date.created,
-      updated: date.updated.getDate(),
-      published: date.published.getDate()
-    },
-    categories: iterateCategories(post.categories)
-  }
+  notFound()
 }
 
 
 /**
  * Get posts by category 
- * @param category Category name
- * @returns {object}
+ * @param where SQL query
  */
-export function getPosts(category: string) {
-  const items: PostInterface[] = posts.filter((post: PostInterface) => {
-    if(post.categories[category]) {
-      const date: DateInterface = getDate(post.date)
-      return post
+export async function getPosts(where: any = {}): Promise<PrismaPosts[]> {
+  if(where.categories) {
+    where.categories = {
+      contains: where.categories[0]
     }
-  })
-  return {
-    posts: items,
-    category: items[0].categories[category]
   }
+  const posts = await computed.posts.findMany({
+    where,
+    select: {
+      ...select.post,
+      user: {
+        select: select.user
+      },
+      page: {
+        select: {
+          slug: true
+        }
+      }
+    },
+  })
+  if(posts.length > 0) {
+    return posts.map((post) => {
+      post.tags = JSON.parse(post.tags)
+      post.categories = JSON.parse(post.categories)
+      return post
+    })
+  }
+  return []
 }
