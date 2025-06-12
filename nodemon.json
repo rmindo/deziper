@@ -1,0 +1,14 @@
+{
+  "ext": "ts,tsx,js,json",
+  "exec": "yarn dev",
+  "watch": [
+    ".env",
+    "src",
+    "bundle.jsx",
+    "../../Packages/vindo",
+    "webpackConfig.js",
+    "esbuildConfig.js"
+  ],
+  "ignore": ["build/*"],
+  "ignoreRoot": [".git"]
+}

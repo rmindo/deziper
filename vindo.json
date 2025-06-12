@@ -1,0 +1,41 @@
+{
+  "port": "9000",
+  "exert": {
+    "passthrough": {
+      "GET": [],
+      "POST": []
+    }
+  },
+  "cors": {
+    "origin": "*",
+    "allowedMethods": [
+      "PUT",
+      "POST",
+      "DELETE",
+      "OPTIONS"
+    ],
+    "allowedHeaders": [
+      "content-type"
+    ]
+  },
+  "env": {
+    "ENV_PATH": {
+      "development": ".env/dev",
+      "production": ".env/prod"
+    }
+  },
+  "buildOption": {
+    "watch": [
+      "./src",
+      "./node_modules"
+    ],
+    "output": "./build",
+    "bundle": "./src/react/pages",
+    "execute": "NODE_ENV=development ts-node ./src/server.ts"
+  },
+  "include": {
+    "lib": "lib",
+    "auth": "lib/auth",
+    "crud": "database/crud"
+  }
+}
