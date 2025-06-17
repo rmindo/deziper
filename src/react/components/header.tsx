@@ -4,7 +4,7 @@ export default function Header() {
       <div className="inner">
         <div id="brand">
           <a href="/">
-            <img alt="Deziper Logo" width="263" height="69" src="/assets/images/logo.svg"/>
+            <img alt="Deziper Logo" width="263" height="69" src="/images/logo.svg"/>
           </a>
         </div>
         <nav id="menu">

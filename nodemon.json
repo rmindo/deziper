@@ -5,7 +5,7 @@
     ".env",
     "src",
     "bundle.jsx",
-    "../../Packages/vindo/packages",
+    "../../Packages/vindo",
     "webpackConfig.js",
     "esbuildConfig.js"
   ],

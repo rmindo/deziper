@@ -24,7 +24,7 @@ app.set(cors())
 app.set(parser)
 app.set(response)
 app.set(reactSSR)
-app.set(serve({path: '/public'}))
+app.set(serve({path: 'src/assets'}))
 
 /**
  * Run the app
