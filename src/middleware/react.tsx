@@ -106,15 +106,6 @@ function bundle(html:any, env:any) {
 
 
 /**
- * Render jsx 
- */
-function render(route:any, {env, events}:Context) {
-  
- 
-}
-
-
-/**
  * Middleware
  */
 export default function(req: Request, res: Response, next: Function, ctx:ExtendedContext) {
@@ -125,11 +116,14 @@ export default function(req: Request, res: Response, next: Function, ctx:Extende
 
       const app = html({...map.meta, content: data})
       if(map.name) {
-        return __(
-          bundle(app, ctx.env)
-        )
+        return {
+          html: __(
+            bundle(app, ctx.env)
+          ),
+          name: map.name
+        }
       }
-      return __(app)
+      return {name: map.name, html: __(app)}
     }
   })
 

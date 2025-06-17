@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer id="footer">
       <div className="inner">
-        <span>Copyright ©2023 Deziper. Designed By Me.</span>
+        <span>Copyright ©2023 Deziper.</span>
       </div>
     </footer>
   )

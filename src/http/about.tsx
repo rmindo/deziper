@@ -19,8 +19,6 @@ export async function GET(req:Request, res:Response) {
   const meta = {
     title: 'About'
   }
-  //@ts-ignore
-  console.log(req.name)
   return (
     <About name="about" meta={meta} title={meta.title}/>
   )
