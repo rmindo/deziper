@@ -1,7 +1,6 @@
 import React from 'react'
 import {renderToString as __} from 'react-dom/server'
-import {utility as util, Context} from '@vindo/core'
-
+import {utility as util, exception} from '@vindo/core'
 
 /**
  * Types
@@ -27,29 +26,42 @@ const isValid = React.isValidElement
 
 
 
-var map:any = {}
+var data:any = {}
 
 
 
 
 /**
  * 
- * @param data 
+ * @param obj 
  * @returns 
  */
-function get(data:any) {
-  const props = data.props
-  if(props) {
-    var name = data.type.name
+function get(obj:any) {
+  const data = {...obj.props}
 
-    if(!name) {
-      name = props.id
-    }
-    if(name && name.match(/default/g)) {
-      name = props.name
-    }
-    return Object.assign({}, props, {name})
+  var meta
+  var name = obj.type.name
+
+  /**
+   * If function is just default
+   * without name use name attribute from props
+   */
+  if(name && name.match(/default/g)) {
+    name = data.name
   }
+  /**
+   * Use id as name
+   */
+  if(!name) {
+    name = data.id
+  }
+  /**
+   * Use meta data if using an html tag
+   */
+  if(data['data-meta']) {
+    meta = data['data-meta']
+  }
+  return Object.assign(data, {name, meta})
 }
 
 
@@ -109,27 +121,34 @@ function bundle(html:any, env:any) {
  * Middleware
  */
 export default function(req: Request, res: Response, next: Function, ctx:ExtendedContext) {
+  const exclude = Object.keys(exception.statuses).concat('error')
 
-  ctx.events.on('render', function(data:any) {
-    if(isValid(data)) {
-      map = get(data)
+  ctx.events.on('render', function(obj:any) {
+    if(isValid(obj)) {
+      data = get(obj)
 
-      const app = html({...map.meta, content: data})
-      if(map.name) {
+      if(req.name && data.name) {
+        if(req.route.back && req.name !== data.name && !exclude.includes(data.name)) {
+          return
+        }
+      }
+
+      const app = html({...data.meta, content: obj})
+      if(data.name) {
         return {
           html: __(
             bundle(app, ctx.env)
           ),
-          name: map.name
+          name: data.name
         }
       }
-      return {name: map.name, html: __(app)}
+      return {name: data.name, html: __(app)}
     }
   })
 
-  if(req.is(ctx.env.RSID)) {
-    res.json(map)
-    map = {}
+  if(req.is(ctx.env.RSID)) {  
+    res.json(data)
+    data = {}
     return
   }
   next()

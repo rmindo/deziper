@@ -733,22 +733,22 @@ body h3 {
     }
 }
 
-#notfound {
+#error {
     text-align: center;
     padding: 180px 0!important
 }
 
-#notfound .error-404 {
+#error .error-404 {
     width: 570px;
     margin: 0 auto
 }
 
-#notfound .error-404 p {
+#error .error-404 p {
     font-size: 20px;
     line-height: 35px
 }
 
-#notfound .error-404 h1 {
+#error .error-404 h1 {
     line-height: 90px;
     font-size: 120px;
     margin-bottom: 20px

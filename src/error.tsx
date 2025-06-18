@@ -1,14 +1,18 @@
-import Error from '@pages/error'
+export default function({exception:exc}:any) {
 
-
-export default function(this:any) {
-  const exc = this.exception
-
-  this.response.status(exc.statusCode)
   const meta = {
     title: `${exc.statusCode} ${exc.status}`
   }
   return (
-    <Error meta={meta} exc={exc}/>
+    <div id="error" className="inner" data-meta={meta}>
+      <div className="error-404">
+        <h1>{exc.statusCode}</h1>
+        {exc.data ? (
+          <p>{exc.data.message}</p>
+        ):(
+          <p>Sorry, There's nothing here. The page you're trying to access might be removed, renamed or never exist.</p>
+        )}
+      </div>
+    </div>
   )
 }
