@@ -1,4 +1,4 @@
-@import '../fonts/icomoon/fonts.css';
+@import './icomoon/fonts.css';
 
 /* latin */
 @font-face {
@@ -6,7 +6,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('quicksand/quicksand-light.ttf') format('truetype');
+  src: url('./quicksand/quicksand-light.ttf') format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('quicksand/quicksand-regular.ttf') format('truetype');
+  src: url('./quicksand/quicksand-regular.ttf') format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -22,7 +22,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('quicksand/quicksand-medium.ttf') format('truetype');
+  src: url('./quicksand/quicksand-medium.ttf') format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('quicksand/quicksand-semibold.ttf') format('truetype');
+  src: url('./quicksand/quicksand-semibold.ttf') format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -38,16 +38,16 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('quicksand/quicksand-bold.ttf') format('truetype');
+  src: url('./quicksand/quicksand-bold.ttf') format('truetype');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('icomoon/fonts/icomoon.eot?q6uzbr');
-  src:  url('icomoon/fonts/icomoon.eot?q6uzbr#iefix') format('embedded-opentype'),
-    url('icomoon/fonts/icomoon.ttf?q6uzbr') format('truetype'),
-    url('icomoon/fonts/icomoon.woff?q6uzbr') format('woff');
+  src:  url('./icomoon/icons/icomoon.eot?q6uzbr');
+  src:  url('./icomoon/icons/icomoon.eot?q6uzbr#iefix') format('embedded-opentype'),
+    url('./icomoon/icons/icomoon.ttf?q6uzbr') format('truetype'),
+    url('./icomoon/icons/icomoon.woff?q6uzbr') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
