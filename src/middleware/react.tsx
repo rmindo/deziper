@@ -2,6 +2,7 @@ import React from 'react'
 import {renderToString as __} from 'react-dom/server'
 import {utility as util, exception} from '@vindo/core'
 
+import braces from 'chalk'
 /**
  * Types
  */
@@ -38,30 +39,25 @@ var data:any = {}
  */
 function get(obj:any) {
   const data = {...obj.props}
-
-  var meta
-  var name = obj.type.name
-
-  /**
-   * If function is just default
-   * without name use name attribute from props
-   */
-  if(name && name.match(/default/g)) {
-    name = data.name
-  }
   /**
    * Use id as name
    */
-  if(!name) {
-    name = data.id
+  if(!data.name) {
+    const name = obj.type.name
+    if(name && !name.match(/default$/)) {
+      data.name = name
+    }
+    else {
+      data.name = data.id
+    }
   }
   /**
    * Use meta data if using an html tag
    */
   if(data['data-meta']) {
-    meta = data['data-meta']
+    data.meta = data['data-meta']
   }
-  return Object.assign(data, {name, meta})
+  return data
 }
 
 
